@@ -2,6 +2,5 @@ lightning
 transformers
 torchmetrics
 watermark
-torchsampler
 torch
 streamlit
