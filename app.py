@@ -40,15 +40,6 @@ st.sidebar.header('User Input Features')
 
 
 # Collects user input features into dataframe
-uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
-if uploaded_file is not None:
-    input_df = pd.read_csv(uploaded_file)
-else:
-    def user_input_features():
-        tweet = st.sidebar.text_input("Tweet")
-        features = {'tweet': tweet}
-        data = pd.DataFrame(features, index=[0])
-        return data
-    input_df = user_input_features()
+
 
 
