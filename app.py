@@ -1,6 +1,6 @@
 import streamlit as st
 
-import pandas as pd
+from src.SentimentAnalysis.inference import predict
 
 st.title("Prevencia")
 
@@ -40,6 +40,12 @@ st.sidebar.header('User Input Features')
 
 
 # Collects user input features into dataframe
+sentence=st.text_input("Enter your text here", "Type Here")
 
-
+if st.button("Predict"):
+    predicted_class,confidence,key=predict(sentence)
+    st.write("Predicted Class: ",key)
+    st.write("Confidence: ",confidence.item())
+    st.write("Predicted Class Number: ",predicted_class.item())
+    st.balloons()
 
